@@ -2,6 +2,14 @@
   class="current-training"
   fxLayout="column"
   fxLayoutAlign="center center"
+  fxLayoutGap="20px"
 >
-  <mat-progress-spinner mode="determinate" value="20"></mat-progress-spinner>
+  <mat-progress-spinner
+    mode="determinate"
+    [value]="progress"
+  ></mat-progress-spinner>
+  <h1>Progress Tracker</h1>
+  <h3>{{ progress }} %</h3>
+  <p>Keep on doing, you are doing great!</p>
+  <button mat-raised-button color="accent">Stop</button>
 </section>
