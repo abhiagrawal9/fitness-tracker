@@ -14,25 +14,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  imports: [
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCheckboxModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatTabsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatSelectModule,
-  ],
+  imports: [],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
@@ -49,6 +34,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatPaginatorModule,
     MatCardModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class MaterialModule {}
