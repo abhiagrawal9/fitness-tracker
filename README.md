@@ -1,6 +1,6 @@
 # FitnessTracker
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0883e91b-dd7e-4d62-9e96-6c18176a5261/deploy-status)]()
+![Netlify Status](https://api.netlify.com/api/v1/badges/0883e91b-dd7e-4d62-9e96-6c18176a5261/deploy-status)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
