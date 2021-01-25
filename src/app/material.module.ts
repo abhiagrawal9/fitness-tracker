@@ -33,12 +33,13 @@ import { MatSortModule } from '@angular/material/sort';
     MatListModule,
     MatTabsModule,
     MatTableModule,
+    MatSortModule,
     MatPaginatorModule,
+
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatSortModule,
   ],
 })
 export class MaterialModule {}

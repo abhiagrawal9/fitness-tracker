@@ -31,4 +31,9 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.datasource.sort = this.sort;
   }
+
+  doFilter(event: Event): void {
+    const searchKeyword = (event.target as HTMLInputElement).value;
+    this.datasource.filter = searchKeyword.trim().toLowerCase();
+  }
 }
