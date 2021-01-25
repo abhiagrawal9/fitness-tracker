@@ -9,7 +9,9 @@
     [value]="progress"
   ></mat-progress-spinner>
   <h1>Progress Tracker</h1>
-  <h3>{{ progress ? progress + "%" : "No progress to show" }}</h3>
+  <h3>
+    {{ progress ? "Progress made: " + progress + "%" : "No progress to show" }}
+  </h3>
   <p>Keep on doing, you are doing great!</p>
   <button mat-raised-button color="accent" (click)="onStop()">Stop</button>
 </section>
