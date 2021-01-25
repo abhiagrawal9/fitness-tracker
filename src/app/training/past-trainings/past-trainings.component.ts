@@ -14,8 +14,8 @@ export class PastTrainingsComponent implements OnInit {
   displayedColumns: string[] = [
     'date',
     'name',
-    'calories',
     'duration',
+    'calories',
     'state',
   ];
 
