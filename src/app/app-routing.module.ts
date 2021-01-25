@@ -23,7 +23,6 @@ const routes: Routes = [
   {
     path: 'training',
     component: TrainingComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: '**',
