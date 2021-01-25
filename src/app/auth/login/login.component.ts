@@ -15,8 +15,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required]),
+      // TODO: Only for testing purposes, later remove test data from email and password and set them to null.
+      email: new FormControl('test@test.com', [
+        Validators.required,
+        Validators.email,
+      ]),
+      password: new FormControl('Qwerty@123', [Validators.required]),
     });
   }
 
