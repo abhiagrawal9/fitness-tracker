@@ -35,7 +35,6 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
