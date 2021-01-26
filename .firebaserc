@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "track-fitness-2703": {
+      "hosting": {
+        "fitness-tracker": [
+          "track-fitness-2703"
+        ]
+      }
+    }
+  }
+}
