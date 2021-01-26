@@ -41,7 +41,6 @@ export class CurrentTrainingComponent implements OnInit {
         progress: this.progress,
       },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.trainingService.cancelExercise(this.progress);

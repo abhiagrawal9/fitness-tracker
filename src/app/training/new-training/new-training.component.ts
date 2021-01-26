@@ -11,8 +11,8 @@ import { Exercise } from '../exercise.model';
   styleUrls: ['./new-training.component.scss'],
 })
 export class NewTrainingComponent implements OnInit, OnDestroy {
-  exercises: Exercise[];
   private exercisesSub: Subscription;
+  exercises: Exercise[];
 
   constructor(private trainingService: TrainingService) {}
 

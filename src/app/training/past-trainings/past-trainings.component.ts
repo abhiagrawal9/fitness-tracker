@@ -8,7 +8,6 @@ import {
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { MatPaginator } from '@angular/material/paginator';
 
 import { TrainingService } from '../training.service';
@@ -21,6 +20,9 @@ import { Exercise } from '../exercise.model';
 })
 export class PastTrainingsComponent
   implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  private finishedExercisesSub: Subscription;
   datasource = new MatTableDataSource<Exercise>();
   displayedColumns: string[] = [
     'date',
@@ -29,9 +31,6 @@ export class PastTrainingsComponent
     'calories',
     'state',
   ];
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  private finishedExercisesSub: Subscription;
 
   constructor(private trainingService: TrainingService) {}
 

@@ -2,12 +2,10 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: white;
-
   &:hover {
     color: lightgray;
   }
 }
-
 .nav-caption {
   display: inline-block;
   padding-left: 6px;

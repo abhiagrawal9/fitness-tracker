@@ -3,12 +3,10 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 a {
   text-decoration: none;
   cursor: pointer;
   color: white;
-
   &:hover {
     color: lightgray;
   }
