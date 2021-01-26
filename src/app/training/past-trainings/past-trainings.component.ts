@@ -1,17 +1,26 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { TrainingService } from '../training.service';
 import { Exercise } from '../exercise.model';
-import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-past-trainings',
   templateUrl: './past-trainings.component.html',
   styleUrls: ['./past-trainings.component.scss'],
 })
-export class PastTrainingsComponent implements OnInit, AfterViewInit {
+export class PastTrainingsComponent
+  implements OnInit, AfterViewInit, OnDestroy {
   datasource = new MatTableDataSource<Exercise>();
   displayedColumns: string[] = [
     'date',
@@ -20,14 +29,19 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit {
     'calories',
     'state',
   ];
-
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  private finishedExercisesSub: Subscription;
 
   constructor(private trainingService: TrainingService) {}
 
   ngOnInit(): void {
-    this.datasource.data = this.trainingService.getCompletedOrCancelledExercises();
+    this.finishedExercisesSub = this.trainingService.completedOrCancelledExercisesChanged.subscribe(
+      (finshedExercises) => {
+        this.datasource.data = finshedExercises;
+      }
+    );
+    this.trainingService.fetchCompletedOrCancelledExercises();
   }
 
   ngAfterViewInit(): void {
@@ -38,5 +52,9 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit {
   doFilter(event: Event): void {
     const searchKeyword = (event.target as HTMLInputElement).value;
     this.datasource.filter = searchKeyword.trim().toLowerCase();
+  }
+
+  ngOnDestroy(): void {
+    this.finishedExercisesSub.unsubscribe();
   }
 }

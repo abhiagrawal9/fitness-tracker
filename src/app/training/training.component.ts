@@ -11,7 +11,7 @@ import { TrainingService } from './training.service';
 })
 export class TrainingComponent implements OnInit, OnDestroy {
   ongoingTraining = false;
-  exSub: Subscription;
+  private exSub: Subscription;
 
   constructor(private trainingService: TrainingService) {}
 

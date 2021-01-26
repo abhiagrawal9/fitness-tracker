@@ -12,7 +12,7 @@ import { Exercise } from '../exercise.model';
 })
 export class NewTrainingComponent implements OnInit, OnDestroy {
   exercises: Exercise[];
-  exercisesSub: Subscription;
+  private exercisesSub: Subscription;
 
   constructor(private trainingService: TrainingService) {}
 
