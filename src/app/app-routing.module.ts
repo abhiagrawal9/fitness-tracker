@@ -25,10 +25,6 @@ const routes: Routes = [
     component: TrainingComponent,
     canActivate: [AuthGuard],
   },
-  {
-    path: '**',
-    redirectTo: '/',
-  },
 ];
 
 @NgModule({
