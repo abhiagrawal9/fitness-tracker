@@ -35,11 +35,22 @@ export class TrainingService {
             });
           })
         )
-        .subscribe((exercises: Exercise[]) => {
-          this.uiService.loadingStateChanged.next(false);
-          this.avaiableExercises = exercises;
-          this.availableExercisesChanged.next([...this.avaiableExercises]);
-        })
+        .subscribe(
+          (exercises: Exercise[]) => {
+            this.uiService.loadingStateChanged.next(false);
+            this.avaiableExercises = exercises;
+            this.availableExercisesChanged.next([...this.avaiableExercises]);
+          },
+          () => {
+            this.uiService.loadingStateChanged.next(false);
+            this.uiService.showSnackbar(
+              'Unable to fetch exercises. An Error occured!',
+              'Cancel',
+              3000
+            );
+            this.availableExercisesChanged.next(null);
+          }
+        )
     );
   }
 
