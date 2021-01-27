@@ -35,16 +35,11 @@ export class TrainingService {
             });
           })
         )
-        .subscribe(
-          (exercises: Exercise[]) => {
-            this.uiService.loadingStateChanged.next(false);
-            this.avaiableExercises = exercises;
-            this.availableExercisesChanged.next([...this.avaiableExercises]);
-          },
-          () => {
-            this.uiService.loadingStateChanged.next(false);
-          }
-        )
+        .subscribe((exercises: Exercise[]) => {
+          this.uiService.loadingStateChanged.next(false);
+          this.avaiableExercises = exercises;
+          this.availableExercisesChanged.next([...this.avaiableExercises]);
+        })
     );
   }
 
