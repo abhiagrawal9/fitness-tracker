@@ -20,9 +20,11 @@ export class SignupComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
-    this.uiService.loadingStateChanged.subscribe((loadingState: boolean) => {
-      this.isLoading = loadingState;
-    });
+    this.loadingStateSub = this.uiService.loadingStateChanged.subscribe(
+      (loadingState: boolean) => {
+        this.isLoading = loadingState;
+      }
+    );
   }
 
   onSubmit(form: NgForm): void {

@@ -22,9 +22,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
     });
-    this.uiService.loadingStateChanged.subscribe((loadingState: boolean) => {
-      this.isLoading = loadingState;
-    });
+    this.loadingStateSub = this.uiService.loadingStateChanged.subscribe(
+      (loadingState: boolean) => {
+        this.isLoading = loadingState;
+      }
+    );
   }
 
   onSubmit(): void {

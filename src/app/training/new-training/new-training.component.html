@@ -3,7 +3,7 @@
     <mat-card fxFlex.xs>
       <mat-card-title fxLayoutAlign="center">Start New Training</mat-card-title>
       <mat-card-content fxLayoutAlign="center">
-        <mat-form-field>
+        <mat-form-field *ngIf="!isLoading">
           <mat-label>Select Exercise</mat-label>
           <mat-select ngModel required name="exercise">
             <mat-option
@@ -14,10 +14,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <mat-spinner *ngIf="isLoading" fxLayoutAlign="center"></mat-spinner>
       </mat-card-content>
-      <mat-action-list fxLayoutAlign="center">
+      <mat-card-actions *ngIf="!isLoading" fxLayoutAlign="center">
         <button mat-button type="submit" [disabled]="f.invalid">Start</button>
-      </mat-action-list>
+      </mat-card-actions>
     </mat-card>
   </form>
 </section>
