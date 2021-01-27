@@ -25,7 +25,7 @@ import { TrainingModule } from './training/training.module';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
