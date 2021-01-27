@@ -60,6 +60,7 @@
     >
     <br />
     <button
+      *ngIf="!isLoading"
       [disabled]="f.invalid"
       type="submit"
       mat-raised-button
@@ -67,5 +68,6 @@
     >
       Sign up
     </button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </section>
