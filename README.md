@@ -1,5 +1,9 @@
 # FitnessTracker
 
+## Site Url
+
+https://track-fitness.netlify.app
+
 ## Deploy Status
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/0883e91b-dd7e-4d62-9e96-6c18176a5261/deploy-status)
